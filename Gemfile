@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# activerecord
+gem 'activerecord', '~> 7.0.5'
+
+# Json
+gem 'json'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 

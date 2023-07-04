@@ -1,4 +1,4 @@
 class Type < ApplicationRecord
-    has_many :pokemon, foreign_key: "type1_id"
-    has_many :pokemon, foreign_key: "type2_id"
+    has_many :pokemons, class_name: "Pokemon", foreign_key: "type1"
+    has_many :pokemons, class_name: "Pokemon", foreign_key: "type2"
 end
