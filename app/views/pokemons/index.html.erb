@@ -1,0 +1,35 @@
+<!-- app/views/pokemons/index.html.erb -->
+
+<h1>Pokemons</h1>
+
+<nav class="float-right mt-2">
+  <ul class="pagination pagination-sm">
+    <% if @pokemons.previous_page %>
+      <li class="page-item">
+        <%= link_to 'Previous', pokemons_path(page: @pokemons.previous_page), class: 'page-link' %>
+      </li>
+    <% end %>
+
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.id %></td>
+        <td>
+          <div class="crop">
+            <%= link_to pokemons_path(pokemon) do %>
+              <%= image_tag pokemon.image %>
+            <% end %>
+          </div>
+        </td>
+        <td>
+          <%= link_to pokemon.name, pokemons_path(pokemon) %>
+        </td>
+      </tr>
+    <% end %>
+
+    <% if @pokemons.next_page %>
+      <li class="page-item">
+        <%= link_to 'Next', pokemons_path(page: @pokemons.next_page), class: 'page-link' %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
