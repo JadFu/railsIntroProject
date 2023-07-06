@@ -1,0 +1,18 @@
+<!-- app/views/pokemons/show.html.erb -->
+
+<h1><%= @pokemon.name %></h1>
+<p>ID: <%= @pokemon.id %></p>
+<img src="<%= @pokemon.image %>">
+
+<h2>Type</h2>
+<p>Type 1: <%= Type.find_by(id: @pokemon.type1)&.name %></p>
+<p>Type 2: <%= Type.find_by(id: @pokemon.type2)&.name if @pokemon.type2.present? %></p>
+
+<h2>Stats</h2>
+<p>HP: <%= @pokemon.HP %></p>
+<p>Attack: <%= @pokemon.ATK %></p>
+<p>Defense: <%= @pokemon.DEF %></p>
+<p>Special Attack: <%= @pokemon.SA %></p>
+<p>Special Defense: <%= @pokemon.SD %></p>
+<p>Speed: <%= @pokemon.SP %></p>
+<p>Total: <%= @pokemon.HP + @pokemon.ATK + @pokemon.DEF + @pokemon.SA + @pokemon.SD + @pokemon.SP %></p>

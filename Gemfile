@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-# see if this works:
+#gem worked
 gem 'will_paginate'
 
 # activerecord
