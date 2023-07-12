@@ -12,12 +12,12 @@
   </thead>
   <tbody>
     <% @pokemons.each do |pokemon| %>
-      <tr>
+      <tr class="d-flex align-items-center">
         <td><%= pokemon.id %></td>
         <td>
           <div class="crop">
             <%= link_to pokemon_path(pokemon) do %>
-              <%= image_tag pokemon.image %>
+              <%= image_tag pokemon.image class: "img-fluid", style: "width: 100px; height: 60px;" %>
             <% end %>
           </div>
         </td>
