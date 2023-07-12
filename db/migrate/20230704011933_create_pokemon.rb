@@ -4,7 +4,7 @@ class CreatePokemon < ActiveRecord::Migration[7.0]
       t.primary_key :id
       t.string :name
       t.integer :type1
-      t.integer :type2
+      t.integer :type2, null: true
       t.integer :HP
       t.integer :ATK
       t.integer :DEF

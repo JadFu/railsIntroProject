@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Pokemon.destroy_all
+Type.destroy_all
+
 Type.create(name: 'normal')
 Type.create(name: 'fire')
 Type.create(name: 'water')
@@ -23,3 +27,6 @@ Type.create(name: 'dark')
 Type.create(name: 'dragon')
 Type.create(name: 'steel')
 Type.create(name: 'fairy')
+
+# Run the import_pokemon.rb file
+load Rails.root.join('import_pokemon.rb')
