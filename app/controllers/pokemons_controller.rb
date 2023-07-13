@@ -20,12 +20,17 @@ class PokemonsController < ApplicationController
         render :edit
       end
     end
-    
-    
 
     private
 
     def pokemon_params
       params.require(:pokemon).permit(:name, :HP, :ATK, :DEF, :SA, :SD, :SP)
     end
+
+    def destroy
+      @pokemon = Pokemon.find(params[:id])
+      @pokemon.destroy
+      redirect_to pokemons_path, notice: "Pokemon was successfully deleted."
+    end
+    
   end
