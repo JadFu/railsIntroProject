@@ -7,9 +7,9 @@
   <div class="col-md-6">
     <div class="d-flex flex-column">
       <h2>Type</h2>
-      <p>Type 1: <%= Type.find_by(id: @pokemon.type1)&.name %></p>
+        <p>Type 1: <%= link_to Type.find_by(id: @pokemon.type1)&.name, category_path(@pokemon.type1) %></p>
       <% if @pokemon.type2.present? %>
-        <p>Type 2: <%= Type.find_by(id: @pokemon.type2)&.name %></p>
+        <p>Type 2: <%= link_to Type.find_by(id: @pokemon.type2)&.name, category_path(@pokemon.type2) %></p>
       <% end %>
 
       <h2>Stats</h2>
