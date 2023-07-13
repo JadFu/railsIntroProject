@@ -1,25 +1,36 @@
-<div class:"container">
-<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-  <a class="navbar-brand" href="/pokemons">Pokemon</a>
+<div class:"container d-flex">
 
-  <div class="navbar-collapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/about">About</a>
-      </li>
-    </ul>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <div class="flex-grow-1 navbar-collapse">
+        <a class="navbar-brand" href="/pokemons">Pokemon</a>
 
-    <form class="form-inline mt-2 mt-md-0" action="/pokemons/search" accept-charset="UTF-8" method="get">
-      <input name="utf8" type="hidden" value="&#x2713;" />
-      <input type="text" name="keyword" id="keyword" class="form-control mr-sm-2" placeholder="Game Search" />
-      <select name="type_id" id="type_id" class="form-control mr-sm-2">
-        <option value="0">All</option>
-        <% Type.all.each do |type| %>
-          <option value="<%= type.id %>"><%= type.name %></option>
-        <% end %>
-      </select>
-      <input type="submit" name="commit" value="Search" class="btn btn-outline-success my-2 my-sm-0" data-disable-with="Search" />
-    </form>
-  </div>
-</nav>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="flex-grow-2 navbar-collapse justify-content-end">
+
+        <form class="form-inline mt-2 mt-md-0 justify-content-end" action="/pokemons/search" accept-charset="UTF-8" method="get">
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Game Search" />
+                </div>
+                <div class="flex-grow-1">
+                <select name="type_id" id="type_id" class="form-control">
+                    <option value="0">All</option>
+                    <% Type.all.each do |type| %>
+                    <option value="<%= type.id %>"><%= type.name %></option>
+                    <% end %>
+                </select>
+                </div>
+                <div class="flex-grow-1">
+                <input type="submit" name="commit" value="Search" class="btn btn-outline-success" data-disable-with="Search" />
+                </div>
+            </div>
+        </form>
+    </div>
+    </nav>
 </div>
