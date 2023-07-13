@@ -11,3 +11,5 @@ you are allowed to edit some of the stats of a pokemon from the page
 you could find an ERD for the db under root
 
 for faker pokemon images an url is used, the demo url image 'which.jpg' is in app/asset/image
+
+for more information about data source please visit 'about' page
