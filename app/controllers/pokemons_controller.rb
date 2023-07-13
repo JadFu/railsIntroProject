@@ -16,6 +16,22 @@ class PokemonsController < ApplicationController
       redirect_to pokemons_path, notice: "Pokemon was successfully deleted."
     end
 
+    def category
+      @type = Type.find(params[:type_id])
+      @pokemons = Pokemon.where("type1 = ? OR type2 = ?", @type.id, @type.id).paginate(page: params[:page], per_page: 10)
+    end  
+    
+    def search
+      keyword = params[:keyword]
+      type_id = params[:type_id]
+    
+      if type_id.present? && type_id.to_i != 0
+        @pokemons = Pokemon.where("name LIKE ? AND (type1 = ? OR type2 = ?)", "%#{keyword}%", type_id, type_id)
+      else
+        @pokemons = Pokemon.where("name LIKE ?", "%#{keyword}%")
+      end
+    end
+
     def update
       @pokemon = Pokemon.find(params[:id])
     
