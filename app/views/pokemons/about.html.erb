@@ -1,28 +1,31 @@
-<div class="container d-flex align-items-center">
-    <h1>About this page:</h1>
+<div class="container align-items-center">
+  <div class="row">
+    <div class="col">
+      <h1>About this page:</h1>
 
-    <p class="d-flex align-items-center">this site contains pokemons from online API<br>
-    and some of the fake pokemons created by faker<br>
-    <br>
-    the main part of data is comming from:"<br>
-    https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0<br>
-    "<br>
-
-    this API contains pokemon information like:"<br>
-    {"name":"bulbasaur","url":"https://pokeapi.co/api/v2/pokemon/1/"}<br>
-    "<br>
-    it has the name of the pokemon and a link to another API<br>
-    in that link API is all the detailed information of that pokemon<br>
+      <p class="align-items-center">
+        This site contains pokemons from an online API and some of the fake pokemons created by Faker.
         <br>
-    this site takes the <br>
-    pokemon name from first API<br>
-    type (might be two)<br>
-    Stats (total six)<br>
-    and image url from second API<br>
-    <br>
-    to put into database<br>
-    database has two tables<br>
-    one for pokemon (id[pk], name, type1[fk], type2[fk], hp, atk, def, sa, sd, sp, img)<br>
-    one for type (id[pk], name)<br>
-    </p>
+        The main part of data is coming from:
+        <br>
+        <a href="https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0">https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0</a>
+        <br>
+        This API contains pokemon information like:
+        <br>
+        {"name":"bulbasaur","url":"https://pokeapi.co/api/v2/pokemon/1/"}
+        <br>
+        It has the name of the pokemon and a link to another API.
+        In that link, the API provides all the detailed information of that pokemon.
+        <br>
+        This site takes the pokemon name from the first API,
+        type (might be two), stats (total six), and image URL from the second API.
+        <br>
+        To put into the database, there are two tables:
+        <br>
+        One for pokemon (id[pk], name, type1[fk], type2[fk], hp, atk, def, sa, sd, sp, img),
+        <br>
+        One for type (id[pk], name).
+      </p>
+    </div>
+  </div>
 </div>

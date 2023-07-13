@@ -1,13 +1,12 @@
-
 <h1>Pokemons - <%= @type.name.capitalize %> Type</h1>
 
 <div class="container">
   <table class="table table-bordered">
     <thead>
       <tr class="d-flex align-items-center">
-        <th class="flex-grow-1"><h3>ID</h3></th>
-        <th class="flex-grow-1"><h3>Image</h3></th>
-        <th class="flex-grow-1"><h3>Name</h3></th>
+        <th class="flex-grow-1">ID</th>
+        <th class="flex-grow-1">Image</th>
+        <th class="flex-grow-1">Name</th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +17,7 @@
             <div class="d-flex justify-content-center">
               <div class="crop">
                 <%= link_to pokemon_path(pokemon) do %>
-                  <%= image_tag pokemon.image, class: "img-fluid", style: "width: 100px; height: 100px;" %>
+                  <%= image_tag pokemon.image, class: "img-fluid", style: "width: 100px; height: 100px;", alt: "image" %>
                 <% end %>
               </div>
             </div>
@@ -45,3 +44,4 @@
     <% end %>
   </ul>
 </nav>
+
