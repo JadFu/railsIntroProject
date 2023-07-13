@@ -30,3 +30,4 @@ Type.create(name: 'fairy')
 
 # Run the import_pokemon.rb file
 load Rails.root.join('import_pokemon.rb')
+load Rails.root.join('faker_pokemon.rb')

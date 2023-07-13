@@ -4,7 +4,9 @@
   <h3>Search Results</h3>
 
   <% if @pokemons.any? %>
+
     <table class="table table-bordered">
+
       <thead>
         <tr class="d-flex align-items-center">
           <th class="flex-grow-1"><h3>ID</h3></th>
@@ -12,6 +14,7 @@
           <th class="flex-grow-1"><h3>Name</h3></th>
         </tr>
       </thead>
+
       <tbody>
         <% @pokemons.each do |pokemon| %>
           <tr class="d-flex align-items-center">
@@ -29,8 +32,11 @@
           </tr>
         <% end %>
       </tbody>
+
     </table>
+
   <% else %>
     <p>No results found.</p>
   <% end %>
+  
 </div>
