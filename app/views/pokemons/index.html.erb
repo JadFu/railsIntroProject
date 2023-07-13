@@ -1,33 +1,36 @@
-
 <h1>Pokemons</h1>
 
 <div class="container">
-  <table class="table table-bordered">
-    <thead>
-      <tr class="d-flex align-items-center">
-        <th class="flex-grow-1"><h3>ID</h3></th>
-        <th class="flex-grow-1"><h3>Image</h3></th>
-        <th class="flex-grow-1"><h3>Name</h3></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @pokemons.each do |pokemon| %>
+  <% if @pokemons.any? %>
+    <table class="table table-bordered">
+      <thead>
         <tr class="d-flex align-items-center">
-          <td class="flex-grow-1"><%= pokemon.id %></td>
-          <td class="flex-grow-1">
-            <div class="d-flex justify-content-center">
-              <div class="crop">
-                <%= link_to pokemon_path(pokemon) do %>
-                  <%= image_tag pokemon.image, class: "img-fluid", style: "width: 100px; height: 100px;" %>
-                <% end %>
-              </div>
-            </div>
-          </td>
-          <td class="flex-grow-1"><%= link_to pokemon.name, pokemon_path(pokemon) %></td>
+          <th class="flex-grow-1"><h3>ID</h3></th>
+          <th class="flex-grow-1"><h3>Image</h3></th>
+          <th class="flex-grow-1"><h3>Name</h3></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @pokemons.each do |pokemon| %>
+          <tr class="d-flex align-items-center">
+            <td class="flex-grow-1"><%= pokemon.id %></td>
+            <td class="flex-grow-1">
+              <div class="d-flex justify-content-center">
+                <div class="crop">
+                  <%= link_to pokemon_path(pokemon) do %>
+                    <%= image_tag pokemon.image, class: "img-fluid", style: "width: 100px; height: 100px;" %>
+                  <% end %>
+                </div>
+              </div>
+            </td>
+            <td class="flex-grow-1"><%= link_to pokemon.name, pokemon_path(pokemon) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No Pokemons here</p>
+  <% end %>
 </div>
 
 <nav class="float-right mt-2">
@@ -45,4 +48,3 @@
     <% end %>
   </ul>
 </nav>
-

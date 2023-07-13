@@ -1,20 +1,31 @@
 
-<h1><%= @pokemon.name %></h1>
-<p>ID: <%= @pokemon.id %></p>
-<img src="<%= @pokemon.image %>">
+<div class="row">
+  <div class="col-md-6 d-flex flex-column align-items-end">
+    <h1><%= @pokemon.name %></h1>
+    <p>ID: <%= @pokemon.id %></p>
+    <img src="<%= @pokemon.image %>">
+  </div>
+  <div class="col-md-6">
+    <div class="d-flex flex-column">
+      <h2>Type</h2>
+      <p>Type 1: <%= Type.find_by(id: @pokemon.type1)&.name %></p>
+      <% if @pokemon.type2.present? %>
+        <p>Type 2: <%= Type.find_by(id: @pokemon.type2)&.name %></p>
+      <% end %>
 
-<h2>Type</h2>
-<p>Type 1: <%= Type.find_by(id: @pokemon.type1)&.name %></p>
-<p>Type 2: <%= Type.find_by(id: @pokemon.type2)&.name if @pokemon.type2.present? %></p>
+      <h2>Stats</h2>
+      <p>HP: <%= @pokemon.HP %></p>
+      <p>Attack: <%= @pokemon.ATK %></p>
+      <p>Defense: <%= @pokemon.DEF %></p>
+      <p>Special Attack: <%= @pokemon.SA %></p>
+      <p>Special Defense: <%= @pokemon.SD %></p>
+      <p>Speed: <%= @pokemon.SP %></p>
+      <p>Total: <%= @pokemon.HP + @pokemon.ATK + @pokemon.DEF + @pokemon.SA + @pokemon.SD + @pokemon.SP %></p>
 
-<h2>Stats</h2>
-<p>HP: <%= @pokemon.HP %></p>
-<p>Attack: <%= @pokemon.ATK %></p>
-<p>Defense: <%= @pokemon.DEF %></p>
-<p>Special Attack: <%= @pokemon.SA %></p>
-<p>Special Defense: <%= @pokemon.SD %></p>
-<p>Speed: <%= @pokemon.SP %></p>
-<p>Total: <%= @pokemon.HP + @pokemon.ATK + @pokemon.DEF + @pokemon.SA + @pokemon.SD + @pokemon.SP %></p>
-
-<%= link_to 'Edit', edit_pokemon_path(@pokemon.id), class: 'btn btn-primary' %>
-<%= link_to 'Delete', pokemon_path(@pokemon), method: :delete, class: 'btn btn-danger' %>
+      <div class="d-flex">
+        <%= link_to 'Edit', edit_pokemon_path(@pokemon.id), class: 'btn btn-primary mr-2' %>
+        <%= link_to 'Delete', pokemon_path(@pokemon), method: :delete, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
+</div>
