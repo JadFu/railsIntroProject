@@ -10,7 +10,7 @@ Type.all.each do |type1|
         special_attack = Faker::Number.between(from: 1, to: 99)
         special_defense = Faker::Number.between(from: 1, to: 99)
         speed = Faker::Number.between(from: 1, to: 99)
-        image = 'which.jpg'
+        image = 'https://www.sqwordle.io/static/media/mystery.3650ba250b7070440dc0.jpg'
 
         Pokemon.create(
             name: name,
