@@ -13,13 +13,13 @@
       <% end %>
 
       <h2>Stats</h2>
-      <p>HP: <%= @pokemon.HP %></p>
-      <p>Attack: <%= @pokemon.ATK %></p>
-      <p>Defense: <%= @pokemon.DEF %></p>
-      <p>Special Attack: <%= @pokemon.SA %></p>
-      <p>Special Defense: <%= @pokemon.SD %></p>
-      <p>Speed: <%= @pokemon.SP %></p>
-      <p>Total: <%= @pokemon.HP + @pokemon.ATK + @pokemon.DEF + @pokemon.SA + @pokemon.SD + @pokemon.SP %></p>
+      <p>HP: <%= @pokemon.HP %><% if @pokemon.HP > 100 %> *<% end %></p>
+      <p>Attack: <%= @pokemon.ATK %><% if @pokemon.ATK > 100 %> *<% end %></p>
+      <p>Defense: <%= @pokemon.DEF %><% if @pokemon.DEF > 100 %> *<% end %></p>
+      <p>Special Attack: <%= @pokemon.SA %><% if @pokemon.SA > 100 %> *<% end %></p>
+      <p>Special Defense: <%= @pokemon.SD %><% if @pokemon.SD > 100 %> *<% end %></p>
+      <p>Speed: <%= @pokemon.SP %><% if @pokemon.SP > 100 %> *<% end %></p>
+      <p>Total: <%= @pokemon.HP + @pokemon.ATK + @pokemon.DEF + @pokemon.SA + @pokemon.SD + @pokemon.SP %><% if @pokemon.HP + @pokemon.ATK + @pokemon.DEF + @pokemon.SA + @pokemon.SD + @pokemon.SP > 550 %> *<% end %></p>
 
       <div class="d-flex">
         <%= link_to 'Edit', edit_pokemon_path(@pokemon.id), class: 'btn btn-primary mr-2' %>
