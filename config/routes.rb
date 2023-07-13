@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :types, only: [:category, :search]
   get '/categories/:type_id', to: 'pokemons#category', as: 'category'
-  post '/pokemons/search', to: 'pokemons#search', as: 'search_pokemons'
+  get '/about', to: 'pokemons#about', as: 'about'
+  get '/pokemons/search', to: 'pokemons#search', as: 'search_pokemons'
   resources :pokemons, only: [:index, :show, :edit, :update, :destroy]
 end
