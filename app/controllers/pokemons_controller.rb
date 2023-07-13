@@ -23,7 +23,13 @@ class PokemonsController < ApplicationController
     
     def search
       keyword = params[:keyword]
-      @pokemons = Pokemon.where("name LIKE ?", "%#{keyword}%")
+      type_id = params[:type_id]
+    
+      if type_id.present? && type_id.to_i != 0
+        @pokemons = Pokemon.where("name LIKE ? AND (type1 = ? OR type2 = ?)", "%#{keyword}%", type_id, type_id)
+      else
+        @pokemons = Pokemon.where("name LIKE ?", "%#{keyword}%")
+      end
     end
 
     def update
