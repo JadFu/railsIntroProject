@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
     resources :pokemons, only: [:index]
-    resources :pokemons, only: [:index, :show, :edit, :update, :destroy]
+    resources :pokemons, only: [:index, :show, :edit, :update, :delete, :destroy]
 end

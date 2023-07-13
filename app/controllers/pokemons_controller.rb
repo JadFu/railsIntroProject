@@ -9,7 +9,13 @@ class PokemonsController < ApplicationController
     def edit
       @pokemon = Pokemon.find(params[:id])
     end
-  
+
+    def destroy
+      @pokemon = Pokemon.find(params[:id])
+      @pokemon.destroy
+      redirect_to pokemons_path, notice: "Pokemon was successfully deleted."
+    end
+
     def update
       @pokemon = Pokemon.find(params[:id])
     
@@ -25,12 +31,6 @@ class PokemonsController < ApplicationController
 
     def pokemon_params
       params.require(:pokemon).permit(:name, :HP, :ATK, :DEF, :SA, :SD, :SP)
-    end
-
-    def destroy
-      @pokemon = Pokemon.find(params[:id])
-      @pokemon.destroy
-      redirect_to pokemons_path, notice: "Pokemon was successfully deleted."
     end
     
   end
